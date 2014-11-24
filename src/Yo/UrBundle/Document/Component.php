@@ -14,14 +14,4 @@ class Component extends BaseComponent
      * @ODM\Id
      */
     protected $id;
-
-    /**
-     * Get id
-     *
-     * @return id $id
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 }

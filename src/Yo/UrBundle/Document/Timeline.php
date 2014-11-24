@@ -33,48 +33,4 @@ class Timeline extends BaseTimeline
     {
         return $this->id;
     }
-
-    /**
-     * Set action
-     *
-     * @param Yo\UrBundle\Document\Action $action
-     * @return self
-     */
-    public function setAction(\Yo\UrBundle\Document\Action $action)
-    {
-        $this->action = $action;
-        return $this;
-    }
-
-    /**
-     * Get action
-     *
-     * @return Yo\UrBundle\Document\Action $action
-     */
-    public function getAction()
-    {
-        return $this->action;
-    }
-
-    /**
-     * Set subject
-     *
-     * @param Yo\UrBundle\Document\Component $subject
-     * @return self
-     */
-    public function setSubject(\Yo\UrBundle\Document\Component $subject)
-    {
-        $this->subject = $subject;
-        return $this;
-    }
-
-    /**
-     * Get subject
-     *
-     * @return Yo\UrBundle\Document\Component $subject
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
 }

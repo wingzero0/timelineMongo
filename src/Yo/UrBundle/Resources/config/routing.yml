@@ -1,3 +1,7 @@
 yo_ur_homepage:
     path:     /hello/{name}
     defaults: { _controller: YoUrBundle:Default:index }
+
+createAction:
+    path:     /create
+    defaults: { _controller: YoUrBundle:Default:create }
