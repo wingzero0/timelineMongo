@@ -60,6 +60,16 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
 
+doctrine_mongodb:
+    connections:
+        default:
+            server: mongodb://localhost:27017
+            options: {}
+    default_database: test_database
+    document_managers:
+        default:
+            auto_mapping: true
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -67,3 +77,13 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+spy_timeline:
+    drivers:
+        odm:
+            object_manager: doctrine.odm.mongodb.document_manager
+            classes:
+                timeline:  Yo\UrBundle\Document\Timeline
+                action:    Yo\UrBundle\Document\Action
+                component: Yo\UrBundle\Document\Component
+                action_component: Yo\UrBundle\Document\ActionComponent

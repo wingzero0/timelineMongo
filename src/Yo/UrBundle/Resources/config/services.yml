@@ -1,0 +1,7 @@
+parameters:
+#    yo_ur.example.class: Yo\UrBundle\Example
+
+services:
+#    yo_ur.example:
+#        class: %yo_ur.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
