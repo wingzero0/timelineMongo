@@ -5,3 +5,7 @@ services:
 #    yo_ur.example:
 #        class: %yo_ur.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    my_spread:
+        class: Yo\UrBundle\Spread\MySpread
+        tags:
+            - { name : spy_timeline.spread }

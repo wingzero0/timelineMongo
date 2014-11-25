@@ -5,3 +5,7 @@ yo_ur_homepage:
 createAction:
     path:     /create
     defaults: { _controller: YoUrBundle:Default:create }
+
+displayAction:
+    path:     /display
+    defaults: { _controller: YoUrBundle:Default:display }
