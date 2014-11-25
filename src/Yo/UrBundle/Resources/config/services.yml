@@ -7,5 +7,6 @@ services:
 #        arguments: [@service_id, "plain_value", %parameter%]
     my_spread:
         class: Yo\UrBundle\Spread\MySpread
+        arguments: ["@logger", "@jms_serializer"]
         tags:
             - { name : spy_timeline.spread }
