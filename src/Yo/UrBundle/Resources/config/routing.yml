@@ -9,3 +9,7 @@ createAction:
 displayAction:
     path:     /display
     defaults: { _controller: YoUrBundle:Default:display }
+
+displayAction:
+    path:     /display/{username}
+    defaults: { _controller: YoUrBundle:Default:displayUserTimeline }

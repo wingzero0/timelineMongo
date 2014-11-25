@@ -27,11 +27,27 @@ class DefaultController extends Controller
 	    $timeline = $timelineManager->getTimeline($subject);
 
 	    // count entries before filtering process.
-	    $count = $timelineManager->countKeys($subject);
+	    $count1 = $timelineManager->countKeys($subject);
 
 	    // count entries after filtering process.
-	    $count = count($timeline);
+	    $count2 = count($timeline);
 
-	    return $this->render('YoUrBundle:Default:display.html.twig', array('coll' => $timeline));
+	    return $this->render('YoUrBundle:Default:display.html.twig', array('coll' => $timeline, 'timelineKey' => $count1, 'timeline' => $count2));
+	}
+	public function displayUserTimelineAction($username)
+	{
+	    $actionManager   = $this->get('spy_timeline.action_manager');
+	    $timelineManager = $this->get('spy_timeline.timeline_manager');
+	    $subject         = $actionManager->findOrCreateComponent('\User', $username);
+
+	    $timeline = $timelineManager->getTimeline($subject);
+
+	    // count entries before filtering process.
+	    $count1 = $timelineManager->countKeys($subject);
+
+	    // count entries after filtering process.
+	    $count2 = count($timeline);
+
+	    return $this->render('YoUrBundle:Default:display.html.twig', array('coll' => $timeline, 'timelineKey' => $count1, 'timelineCount' => $count2));
 	}
 }
