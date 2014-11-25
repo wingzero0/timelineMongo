@@ -12,6 +12,7 @@ class MySpread implements SpreadInterface
     public function supports(ActionInterface $action)
     {
         // here you define what actions you want to support, you have to return a boolean.
+        return true;
         if ($action->getSubject()->getName() == "chucknorris") {
             return true;
         }
@@ -26,10 +27,10 @@ class MySpread implements SpreadInterface
         $coll->add(new EntryUnaware('\User', 'steven seagal'));
 
         // get all other users
-        $users = MyBestClass::MyBestMethodToGetNerds();
+        // $users = MyBestClass::MyBestMethodToGetNerds();
 
-        foreach ($users as $user) {
-            $coll->add(new EntryUnaware(get_class($user), $user->getId()));
-        }
+        // foreach ($users as $user) {
+        //     $coll->add(new EntryUnaware(get_class($user), $user->getId()));
+        // }
     }
 }

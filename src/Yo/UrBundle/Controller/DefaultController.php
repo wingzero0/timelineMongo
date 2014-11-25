@@ -18,13 +18,14 @@ class DefaultController extends Controller
 		$actionManager->updateAction($action);
         return $this->render('YoUrBundle:Default:index.html.twig', array('name' => "done"));
 	}
-	public function displayAction()
+	public function displayFixAction()
 	{
 	    $actionManager   = $this->get('spy_timeline.action_manager');
 	    $timelineManager = $this->get('spy_timeline.timeline_manager');
 	    $subject         = $actionManager->findOrCreateComponent('\User', 'steven seagal');
 
 	    $timeline = $timelineManager->getTimeline($subject);
+	    $userId = $subject->getId();
 
 	    // count entries before filtering process.
 	    $count1 = $timelineManager->countKeys($subject);
@@ -32,7 +33,7 @@ class DefaultController extends Controller
 	    // count entries after filtering process.
 	    $count2 = count($timeline);
 
-	    return $this->render('YoUrBundle:Default:display.html.twig', array('coll' => $timeline, 'timelineKey' => $count1, 'timeline' => $count2));
+	    return $this->render('YoUrBundle:Default:displayFix.html.twig', array('coll' => $timeline, 'timelineKey' => $count1, 'timelineCount' => $count2, 'userId' => $userId));
 	}
 	public function displayUserTimelineAction($username)
 	{
