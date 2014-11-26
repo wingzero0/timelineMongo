@@ -6,10 +6,14 @@ createAction:
     path:     /create
     defaults: { _controller: YoUrBundle:Default:create }
 
-displayActionFix:
+displayFixAction:
     path:     /displayFix
     defaults: { _controller: YoUrBundle:Default:displayFix }
 
 displayAction:
     path:     /display/{username}
     defaults: { _controller: YoUrBundle:Default:displayUserTimeline }
+
+showUserAction:
+    path:     /show/{username}
+    defaults: { _controller: YoUrBundle:Default:showUser }

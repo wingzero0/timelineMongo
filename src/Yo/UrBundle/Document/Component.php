@@ -20,6 +20,11 @@ class Component extends BaseComponent
      */
     protected $name;
 
+    /**
+     * @ODM\Int;
+     */
+    protected $loginCount;
+
     public function getId(){
         return $this->id;
     }
@@ -30,5 +35,12 @@ class Component extends BaseComponent
     public function setName($name){
     	$this->name = $name;
     	return $this;
+    }
+    public function getLoginCount(){
+        return $this->loginCount;
+    }
+    public function setLoginCount($count){
+        $this->loginCount = $count;
+        return $this;
     }
 }

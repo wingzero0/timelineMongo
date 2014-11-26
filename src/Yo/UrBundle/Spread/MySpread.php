@@ -21,10 +21,11 @@ class MySpread implements SpreadInterface
         // here you define what actions you want to support, you have to return a boolean.
         $logger = $this->logger;
         $logger->info("action subject name:" . $action->getSubject()->getName());
+        $logger->info("action subject identifier:" . $action->getSubject()->getIdentifier());
         $logger->info("serializer:" . $this->serializer->serialize($action->getSubject(), 'json'));
 
-        return true;
-        if ($action->getSubject()->getName() == "chucknorris") {
+        if ($action->getSubject()->getIdentifier() == "chucknorris") {
+            $logger->info("support action:" . $this->serializer->serialize($action, 'json'));
             return true;
         }
 
