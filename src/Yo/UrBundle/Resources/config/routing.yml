@@ -2,6 +2,10 @@ yo_ur_homepage:
     path:     /hello/{name}
     defaults: { _controller: YoUrBundle:Default:index }
 
+makeFriendAction:
+    path: /friend/{name1}/{name2}
+    defaults: { _controller: YoUrBundle:Default:makeFriend }
+
 createAction:
     path:     /create
     defaults: { _controller: YoUrBundle:Default:create }

@@ -19,6 +19,7 @@ class MySpread implements SpreadInterface
     public function supports(ActionInterface $action)
     {
         // here you define what actions you want to support, you have to return a boolean.
+        return true;
         $logger = $this->logger;
         $logger->info("action subject name:" . $action->getSubject()->getName());
         $logger->info("action subject identifier:" . $action->getSubject()->getIdentifier());
