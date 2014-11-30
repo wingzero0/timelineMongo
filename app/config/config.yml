@@ -87,3 +87,8 @@ spy_timeline:
                 action:    Yo\UrBundle\Document\Action
                 component: Yo\UrBundle\Document\Component
                 action_component: Yo\UrBundle\Document\ActionComponent
+    filters:
+        duplicate_key: ~
+        data_hydrator:
+            locators:
+                - spy_timeline.filter.data_hydrator.locator.doctrine_odm
